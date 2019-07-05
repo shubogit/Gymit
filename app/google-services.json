@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "876289115094",
+    "firebase_url": "https://gymit-1b687.firebaseio.com",
+    "project_id": "gymit-1b687",
+    "storage_bucket": "gymit-1b687.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876289115094:android:6fbbbab75907db9c",
+        "android_client_info": {
+          "package_name": "com.shubo7868.shubham.gymit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876289115094-jbd3voqgr2du1c2jvirfnd06oo9snq3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shubo7868.shubham.gymit",
+            "certificate_hash": "53ccda5ada93ef78db5edae30af08947cd007ee3"
+          }
+        },
+        {
+          "client_id": "876289115094-lgnure15nej6c6696bs5a3av42egmp9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2R2YFKvwPikLeUy1Eb0p08icau8lnRbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876289115094-lgnure15nej6c6696bs5a3av42egmp9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

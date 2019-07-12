@@ -5,9 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mPasswordField;
 
     private Button mLoginBtn;
+    private TextView mSignUp;
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -37,7 +40,19 @@ public class MainActivity extends AppCompatActivity {
         mEmailField = (EditText)findViewById(R.id.main_emailField);
         mPasswordField = (EditText)findViewById(R.id.main_passwordField);
 
+
         mLoginBtn = (Button)findViewById(R.id.button_login);
+
+        mSignUp = findViewById(R.id.main_signUp);
+
+        mSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MainActivity.this, SignUp.class));
+                finish();
+            }
+        });
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -60,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -73,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
             if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(MainActivity.this, "Field are empty", Toast.LENGTH_LONG).show();
+            } else if(!isValidEmail(email)) {
+                Toast.makeText(MainActivity.this, "Please enter a valid email address!!", Toast.LENGTH_LONG).show();
             }
             else {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -88,5 +106,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+
+
 
 }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Gymit</string>
+    <string name="btn_logout">LOG OUT</string>
+    <string name="account_tv">TARGET MUSCLES LIST</string>
+    <string name="account_entry">CREATE YOUR WORKOUT LIST</string>
+    <string name="account_addList">ADD</string>
+    <string name="signUp_text">New user? Sign up here. </string>
 </resources>

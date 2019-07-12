@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:padding="@android:dimen/app_icon_size"
     android:orientation="vertical"
+    android:padding="@android:dimen/app_icon_size"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".SignUp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login Here"
+        android:text="Sign up Here"
         android:textAllCaps="true"
         android:gravity="center"
         android:textColor="#fff"
@@ -21,40 +21,55 @@
         android:textSize="25sp"/>
 
     <EditText
+        android:id="@+id/signUp_emailField"
+        style="@style/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:id="@+id/main_emailField"
-        android:hint="example@abc.com"
         android:layout_marginBottom="20dp"
-        android:maxLines="1"
-        style="@style/edit_text"/>
+        android:gravity="center"
+        android:hint="example@abc.com" />
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:gravity="center"
         android:password="true"
-        android:maxLines="1"
-        android:id="@+id/main_passwordField"
+        android:id="@+id/signUp_passwordField"
         style="@style/edit_text"/>
-        android:layout_marginBottom="20dp"/>
+    android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUp_confirm"
+        style="@style/edit_text"
+        android:hint="Confirm password"
+        android:password="true"
+        android:gravity="center"/>
+
+
+
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_login"
+        android:id="@+id/button_signUp"
         style="@style/button"
-        android:text="Login" />
+        android:text="CREATE ACCount" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/main_signUp"
+        android:id="@+id/signUp_tv"
         android:layout_below="@id/button_login"
-        android:text="@string/signUp_text"
+        android:text="Already a member? Login Instead."
         android:gravity="center"
         android:padding="20dp"
         />
+
 
 </LinearLayout>

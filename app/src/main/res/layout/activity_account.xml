@@ -1,19 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/account_rlayout"
     android:padding="20dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="#E9E9E9"
     tools:context=".AccountActivity">
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/account_logOut"
-        android:text="LOG OUT"
-        android:layout_gravity="center"
-        android:background="@color/colorAccent" />
+        android:id="@+id/account_cv"
+        android:layout_marginBottom="20dp"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <!-- A CardView that contains a TextView -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="4dp">
 
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:gravity="center"
+                android:text="@string/account_tv"
+                android:textSize="18dp"/>
+
+        </android.support.v7.widget.CardView>
 </LinearLayout>
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/account_edtEntry"-->
+        <!--android:layout_below="@id/account_entry"-->
+        <!--android:hint="Exercise Name"-->
+        <!--style="@style/edit_text"/>-->
+
+
+    <!--<Button-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/account_addList"-->
+        <!--android:layout_below="@id/account_edtEntry"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--style="@style/button"-->
+        <!--android:text="ADD"/>-->
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/account_entry"
+        android:text="@string/account_entry"
+        android:layout_below="@id/account_cv"
+        android:gravity="center"/>
+
+
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/account_logOut"-->
+        <!--android:text="LOG OUT"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/colorAccent" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/Theme.AppCompat"
+        android:layout_below="@id/account_entry">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/account_listView_exercises"
+            android:layout_marginTop="10sp">
+
+        </ListView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <android.support.v7.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardCornerRadius="35dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/colorAccent"
+                android:id="@+id/account_logout"
+                android:layout_toStartOf="@id/fabAddExercise"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_power_settings_new_black_24dp"/>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardCornerRadius="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/colorAccent"
+                android:id="@+id/fabAddExercise"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_add_white_24dp"/>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+</RelativeLayout>
